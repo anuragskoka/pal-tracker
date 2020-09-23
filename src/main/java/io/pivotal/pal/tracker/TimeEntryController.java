@@ -8,15 +8,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/time-entries")
 public class TimeEntryController {
-    TimeEntryRepository timeEntryRepository;
+    private TimeEntryRepository timeEntryRepository;
 
     public TimeEntryController(TimeEntryRepository timeEntryRepository) {
         this.timeEntryRepository=timeEntryRepository;
     }
     @PostMapping
     public ResponseEntity<TimeEntry> create(@RequestBody TimeEntry timeEntryToCreate) {
+        System.out.println("time entry to create "+timeEntryToCreate);
         TimeEntry timeentry=this.timeEntryRepository.create(timeEntryToCreate);
-         return new ResponseEntity<TimeEntry>(timeentry, HttpStatus.CREATED);
+        System.out.println("time in controller+++++"+timeentry);
+         return new ResponseEntity<>(timeentry, HttpStatus.CREATED);
     }
     @GetMapping("{timeEntryId}")
     public ResponseEntity<TimeEntry> read(@PathVariable Long timeEntryId) {

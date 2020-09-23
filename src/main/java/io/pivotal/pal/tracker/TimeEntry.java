@@ -34,6 +34,11 @@ public class TimeEntry {
         return timeEntryId;
     }
 
+    public void setId(long id) {
+        this.timeEntryId = id;
+    }
+
+
     public long getProjectId() {
         return projectId;
     }

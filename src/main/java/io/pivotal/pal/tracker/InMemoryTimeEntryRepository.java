@@ -12,6 +12,8 @@ private long  timeEntrySeq=1L;
         long id=timeEntrySeq++;
        TimeEntry newTimeEntry= new TimeEntry(id,timeEntry.getProjectId(),timeEntry.getUserId(),timeEntry.getDate(),timeEntry.getHours());
         timeEntyRepo.put(id,newTimeEntry);
+        System.out.println("id un reporsitory"+id);
+        System.out.println("id un reporsitory"+newTimeEntry);
         return newTimeEntry;
     }
 
