@@ -29,7 +29,7 @@ private long  timeEntrySeq=1L;
     }
 
     @Override
-    public TimeEntry update(long id, TimeEntry timeEntry) {
+    public TimeEntry update(Long id, TimeEntry timeEntry) {
        if( !timeEntyRepo.containsKey(id)) {
            return null;
        }
@@ -51,8 +51,8 @@ private long  timeEntrySeq=1L;
     }
 
     @Override
-    public TimeEntry delete(long id) {
-        return (TimeEntry) timeEntyRepo.remove(id);
+    public void delete(Long id) {
+        timeEntyRepo.remove(id);
     }
 
 
